@@ -229,13 +229,29 @@ random.shuffle(alist)
 print(alist)
 a=random.sample(alist,1)
 alist.remove(a)
-print(alist)  # 오류 뜨는 이유 여쭤보자 ㄹㅇ 이게 외않되?, 초이스랑 샘플 차이점; 문자열인지 리스틔인지
+print(alist)  # 오류 뜨는 이유 여쭤보자 ㄹㅇ 이게 외않되?, 초이스랑 샘플 차이점; 문자열인지 리스트인지
 
 
 
-##import random
-##dolist=[inpur(f"해야 할 일 입력({i+1}):") for i in range(5)]
-##print("해야 할 일", dolist)
-##random.shuffle(dolist)
-##print("해야 할 일",dolist)
-### 리무브 쓸떄는 이프문 같이 써줘라
+import random
+dolist=[input(f"해야 할 일 입력({i+1}):") for i in range(5)] #해야할 일 5개까지 입력
+print("해야 할 일", dolist)
+
+random.shuffle(dolist) #섞음
+print("해야 할 일(순서 섞음)",dolist)
+dolist2=dolist.copy() #리스트 복사
+doit=random.choice(dolist) #리스트 내의 값 1개 반환
+print("선택된 할 일:%s"%(doit)) #1개 출력
+
+#case1
+if doit in dolist: #remove 사용시 if문 사용!
+    dolist.remove(doit) #아까 그 1개 삭제
+print("남은 할 일:%s"%(dolist)) #남은 태스크- 남은 할 일로 출력
+
+#case2
+if doit in dolist2: 
+    doin=dolist2.index(doit) #doit의 리스트 인덱스를 doin으로 저장
+print("선택된 할 일:%s" %(dolist2.pop(doin))) #pop: 걔만 뺴내기
+print("남은 할 일:%s" %(dolist2)) #pop된것만 제외된다 오옝
+
+# 리무브 쓸떄는 이프문 같이 써줘라
