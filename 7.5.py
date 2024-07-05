@@ -74,32 +74,7 @@ count=1
 for i in k:
     for j in i:
         if j=='연':
-            print("연산군")
-        elif j=='광':
-            print("광해군")
-        elif count in [1,7,14,16,21,22,23]:
-            print(j+"조")
-        else:
-            print(j+"종")
-        count+=1
-
-
-
-#문제인데 보충 .. 
-import random
-a=(random.randiant(1,100) for i in range(30))
-print(a)
-num=0
-for i in a: #요소 하나씩 가져와서 50 이상인지 확인하기
-    if i>=50:
-        print(i,end=" ")
-        num+=1
-prin(num)
-print(b)
-
-
-
-#오류뜨는 오느르이 명언
+   의 명언
 import random
 q=[]
 q.append("꿈을 지녀라, 그러면 어려운 현실은 이길 수 있다")
@@ -116,7 +91,7 @@ print*dq
 
 
 
-#멋있는 스파이럴 그리기.. 근데 외않되?
+#멋있는 스파이럴 그리기
 import turtle
 t=turtle.Turtle()
 t.speed(0)
@@ -142,42 +117,11 @@ for x,y,c in positions #리스트 안에 요소 수에 맞춰 변수를 할당�
     t.penup()
     t.goto(x,y)
     t.pendown()
-    t.color(c,c) #컬러두개쓰면 선색, 채우기색 순서임, 채우기색도 지정했지만 begin end 안시켜서 소용없음
-    t.circle(60)
-
-
-
-
-#교재 문제: 1차원 리스트 이용
-temp_list=[0,10,20,30]
-vapor_list=[4.8,9.4,17.3,30.4]
-
-vapor=float(input("현재 수증기량 입력"))
-temp=int(input("현재 온도 입력"))
-
-if temp in temp_list:
-    humidity=(vapor/vapor_list[temp_list.index(temp)])*100
-    print("현재 습도는", round(humidity,2), "%입니다")
-
-
-
-
-#응용 문제: 2차원 리스트 이용
-a=[[0,4.8],[10,9.4],[20,17.3],[30,30.4]]
-b=float(input("현재 수증기량 입력"))
-if b in a:
-    al=a.index(b)
-    humidity=a.index(b+1)
-    print(humidity)
-
-
-
-
-#정답..인데 작동원리를 파악못함 아 
+    t.color(c,c) #컬러두개쓰면 선색, 채우기색 순서야
 a=[[0,4.8],[10,9.4],[20,17.3],[30,30.4]]
 v=float(input("현재 수증기량 입력"))
 t=int(input("현재 온도 입력"))
-for i in a:
+for i in a:#i가 a에 있는지 순회. 2차원 리스트 for문= 쫙 펼쳐 찾아보는 느낌
     if t in i:
         humidity=(v/i[1])*100
         print("현재습도는", round(humidity,2),"%입니다")
@@ -185,20 +129,23 @@ for i in a:
 
 
 
-#추가문제: 내꺼 왜안되는지 알아보고 수정을 하자.
+#추가문제: 내꺼 왜안되는지 알아보고 수정.
 import random
 a=['치약','샴푸','린스','주방세제','키친타올','칫솔']
 
 while True:
     a.insert(random.randint(0,len(a)), input("구매할 추가 물품 하나를 입력"))
-    print(a)
+    print(a) #추가된 리스트 출력
 
-    b=input("구매할 물품")
+    b=input("구매할 물품") 
     if b in a:
-        bi=print(a.index(b))
+        bi=a.index(b) #수정전: bi=print(a.index(b))-프린트가 변수에 저장됨
         print(f"{b}는 {bi+1} 번째에 있습니다")
         a.remove(b)
-        print(a.sort(reverse=True))
+        #print(a.sort(reverse=True)) >> none인 이유:
+        #sort()는 정렬하는 역할인데, a를 출력해야지 저 문장을 출력하는건 아님
+        a.sort(reverse=True)
+        print(f"내림차순 정렬:{a}")
     else:
         print("물품이 리스트에 없습니다")
 
@@ -206,6 +153,7 @@ while True:
 
 
 #패널티킥 5번하는 게임
+#내 정답
 import random
 a=['오른쪽','왼쪽','가운데']
 b=['상단','하단']
@@ -235,24 +183,24 @@ print(f"총{count}번 성공했다!")
 
 #교수님 정답(리스트만 보충)
 import random
-goal=
-goal2=
+goal=['오른쪽 상단','오른쪽 하단','왼쪽 상단','왼쪽 하단','가운데 상단','가운데 하단']
+goal2=['왼쪽','오른쪽','가운데']
 i,cnt=0,0
-while i<5:
-    com=random.choice(goal)
+while i<5:#5회반복
+    com=random.choice(goal) #문자열 중 하나 변수에 저장
     print(com)
     while True:
         me1=input("왼쪽 오른쪽 가운데 중 하나를 입력")
-        if me in goal2:
+        if me1 in goal2:
             break
         else:
-            print("다시 입력해주세요")
+            print("다시 입력해주세요") #입력 제대로 안 했을떄 다시 입력해주세요 뜨게 만들기
     me2=input("상단 하단 중 하나를 입력")
     me=f"{me1} {me2}" #덧셈연산자쓸거면 me1+" "+me2: 리스트에 있는 문자열 형태
     if com==me:
         print("패널티킥 실패")
     else:
-        print(f"com:{com}")
+        print(f"com:{com}") #f string 엄청 편하네.
         print(f"me:{me}")
         print("패널티킥 성공")
         cnt+=1
@@ -260,7 +208,9 @@ while i<5:
 print(f"총 {cnt}번 성공")
 
 
-#가위바위보게임
+#가위바위보게임 조건: 잘못 입력하거나 비겼으면 다시, 승부보면 끝나는
+#첫 시도 틀린이유: 잘못입력/비겼다/승부났다 이게 다 나눠져있어야함, 반응이 다르니까! 
+#그래서 if 와 elif로 나눠주
 import random
 l=['가위','바위','보']
 while True:
@@ -283,4 +233,25 @@ while True:
         print("이겼습니다")
     if ml=='보'and cl=='가위':
         print("졌습니다")
+    break        
+
+#수정완료: elif로 구
+import random
+l=['가위','바위','보']
+while True:
+    cl=random.choice(l)
+    ml=input("가위 바위 보중 하나를 입력")
+    if ml not in l:
+        print("잘못 입력, 다시 입력해라")
+        continue
+    
+    elif ml==cl:
+        print("비겼습니다")
+        continue
+    
+    elif ml=='가위'and cl=='바위'or ml=='바위'and cl=='보' or ml=='보'and cl=='가위':
+        print("졌습니다")
+        
+    elif ml=='가위'and cl=='보'or ml=='바위'and cl=='가위' or ml=='보'and cl=='바위':
+        print("이겼습니다")
     break        
