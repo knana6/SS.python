@@ -16,7 +16,7 @@ while True:
 
 
 
-#2차원 리스트
+#2차원 리스트 연습
 num=[[10,20,30],[40,50,60],[70,80]]
 slist1=['Love','Like','Excellent','Good','Great']
 slist2=[['Python','C programming'],['Java','C++']]
@@ -63,6 +63,7 @@ for i in range(len(list1)):
     print(f"{i}:{list1[i]}",end=" ")
 
 
+
 #왕이름 알려주는 코드 작성
 k=[]
 for i in range(4):
@@ -74,20 +75,35 @@ count=1
 for i in k:
     for j in i:
         if j=='연':
-   의 명언
+            
+
+
+#퀴즈: 리스트 랜덤 1~50, 30개, 그중 50이상인거 개수 출력
+import random
+count=0
+a=[random.randiand(1,100)in range (30)] # apprnd() 안에는 요소만 들어가야, 조건문 반복문 불허!
+for i in a:
+    if i>=50:
+        count+=1
+
+print(count)
+
+
+            
+#오늘의 명언
 import random
 q=[]
 q.append("꿈을 지녀라, 그러면 어려운 현실은 이길 수 있다")
 q.append("분노는 바보들의 가슴 속에서만 살아간다")
-q.append("고생없이 얻을 수 있는 진실로 뒤중한 것은 하나도 없다")
-q.append("사람은 사랑할 떄 누구나 시인이 된다")
+q.append("고생없이 얻을 수 있는 진실로 귀중한 것은 하나도 없다")
+q.append("사람은 사랑할 때 누구나 시인이 된다")
 q.append("시작이 반이다")
-dq=random.choice(q)
+dq=random.choice(q) #choice는 요소만 쏙 뽑아줌, sample은 리스트로 뽑아줌
 print("#"*20)
 print("#"+" "*3+"오늘의 명언")
 print("#"*20)
 print()
-print*dq
+print(dq)
 
 
 
