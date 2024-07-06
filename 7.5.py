@@ -134,6 +134,10 @@ for x,y,c in positions #리스트 안에 요소 수에 맞춰 변수를 할당�
     t.goto(x,y)
     t.pendown()
     t.color(c,c) #컬러두개쓰면 선색, 채우기색 순서야
+
+
+
+#수증기 활동
 a=[[0,4.8],[10,9.4],[20,17.3],[30,30.4]]
 v=float(input("현재 수증기량 입력"))
 t=int(input("현재 온도 입력"))
