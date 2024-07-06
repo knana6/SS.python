@@ -251,7 +251,7 @@ while True:
         print("졌습니다")
     break        
 
-#수정완료: elif로 구
+#수정완료: elif로 구문 작성.
 import random
 l=['가위','바위','보']
 while True:
@@ -271,3 +271,27 @@ while True:
     elif ml=='가위'and cl=='보'or ml=='바위'and cl=='가위' or ml=='보'and cl=='바위':
         print("이겼습니다")
     break        
+
+
+#교수님 코드 복습: 나름대로 비슷하게 풀었내&&^^
+import random
+
+srp=['가위','바위','보']
+random.shuffle(srp)
+my_srp=com_srp='가위'
+
+while my_srp==com_srp:
+    com_srp=random.choice(srp)
+    #print(com_srp)
+    while True:
+        my_srp=input("가위 바위 보 중 하나를 입력")
+        if my_srp in srp:
+            break
+        else:
+            print('잘못 입력하였습니다. 다시 입력해주세요')
+    if my_srp==com_srp:
+        print('비겼습니다. 다시합니다')
+    elif (my_srp=='가위' and com_srp=='보')or (my_srp=='바위' and com_srp=='가위')or( my_srp=='보'and com_srp=='바위'):
+        print('당신이 이겼습니다')
+    else:
+        print('당신이 졌습니다')
