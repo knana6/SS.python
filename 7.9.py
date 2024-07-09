@@ -423,3 +423,24 @@ t.goto(-300,250) #터틀의 시작위치
 t.pendown()
 s.listen() #keyboard 이벤트를 기다리는 함수
 s.mainloop() #터틀을 종료할때까지 실행하는 것! 마우스/키보드 입력 계속 처리해줌
+
+
+#교재:함수는 return을 만나면 종료한다
+def get_sum(start,end):
+    sum=0
+    for i in range(start,end+1):
+        sum+=i
+    print("sum=",sum)
+get_sum(1,20)
+get_sum(1,10)
+
+
+def calculate_area(r):
+    area=3.14*r**2
+    return area
+##c_area=calculate_area(5.0) #이렇게 한번에 써도
+print(calculate_area(5.0))
+##
+##area_sum=calculate_area(5.0)+calculate_area(10.0)
+##print(area_sum)
+
