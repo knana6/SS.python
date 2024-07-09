@@ -31,7 +31,7 @@ print("합 %s 평균 %s" %(nsum,avg))
 sum_and_avg2(num)
 
 
-def random_save(nlist,n,s,e):
+def random_save(nlist,n,s,e):#그냥 필요한 변수 다 갖다 넣는것!
     for i in range(n):
         nlist.append(random.randint(s,e))
 
