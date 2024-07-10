@@ -37,7 +37,7 @@ def random_save(nlist,n,s,e):#그냥 필요한 변수 다 갖다 넣는것!
 
 def list_print(nlist):
     for i in range(len(nlist)):
-        print("%4s" %(nlist[i]),end=" ") #형식지정자 사용시 퍼센트와s 사이에 숫자=자릿수
+        print("%4s" %(nlist[i]),end=" ") #형식지정자 사용시 퍼센트와s 사이에 숫자=몇칸 여백 공간 놔둘지! 이건 4칸씩 여백있다는의미
         if (i+1)%10==0:#10번 출력했을때 줄바꿈
             print()
         
