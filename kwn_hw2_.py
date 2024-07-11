@@ -1,7 +1,6 @@
 # 학번: 202421405
 
 
-
 import random #사용할 모듈
 
 def biglist(q): #대문자 q(0~3)개 랜덤 리스트 제작
