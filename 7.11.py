@@ -153,7 +153,7 @@ s=[]
 
 for i in range(20):
     n=random.randint(0,100)
-    s.append(f"std{i+1}:{n}",) #이케 해도 되는지 질문
+    s.append(f"std{i+1}:{n}",) #이케 해도 되는지 질문-> 문자열 표현 방법은 4가지 모두 가능하다, 콤마 표기법은 print()에서만 되구
 
 
 #교답
